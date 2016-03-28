@@ -9,7 +9,7 @@ IMAGE_NAME="$OWNER/$NAME"
 
 TAG='' && [ -n "$1" ] && TAG=":$1" && shift
 
-CMD="docker run -e SMF_CONFIG=$SMF_CONFIG ${IMAGE_NAME}${TAG} $@"
+CMD="docker run -e SMF_CONFIG=$SMF_CONFIG $IMAGE_NAME$TAG $@"
 
 echo ">> $CMD"
 $CMD

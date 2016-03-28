@@ -22,6 +22,6 @@ fi
 
 shift # TAG
 
-CMD="docker run --rm --name ${NAME} -it --entrypoint /bin/bash -v `pwd`:/app.out ${IMAGE_NAME}${TAG}"
+CMD="docker run --rm --name $NAME -it --entrypoint /bin/bash -v `pwd`:/app.out $IMAGE_NAME$TAG"
 
 echo $CMD && exec $CMD

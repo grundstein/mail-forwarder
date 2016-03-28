@@ -33,14 +33,14 @@ GIT_EMAIL='`git log -1 --format=%ce`'
 GIT_LOG='`git log -1 --format=%s`'
 _EOF
 
-CMD1="docker build -t ${IMAGE_NAME}${TAG} ."
+CMD1="docker build -t $IMAGE_NAME$TAG ."
 
 if [ -n "$CIRCLECI" ]
 then
     # do not use --rm param inside circleCI
-    CMD2="docker run ${IMAGE_NAME}${TAG} test"
+    CMD2="docker run $IMAGE_NAME$TAG test"
 else
-    CMD2="docker run --rm --name $NAME ${IMAGE_NAME}${TAG} test"
+    CMD2="docker run --rm --name $NAME $IMAGE_NAME$TAG test"
 fi
 
 echo ">> Run $CMD1"
